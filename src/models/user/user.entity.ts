@@ -15,15 +15,13 @@ import {
     @Index()
     public id: string
   
-    @Column({ name: 'first_name', type: 'text', nullable: true })
+    @Column({ name: 'first_name', type: 'varchar', nullable: true })
     public firstName: string
-  
-    @Column({ name: 'last_name', type: 'text', nullable: true })
 
-    @Column({ name: 'email', type: 'text', unique: true })
+    @Column({ name: 'email', type: 'varchar', unique: true, length:255 })
     public email: string
   
-    @Column({ name: 'phone', type: 'text', nullable: true, unique: true })
+    @Column({ name: 'phone', type: 'varchar', nullable: true, unique: true,length:255 })
     public phone: string
     
     @Column({ name: 'password', type: 'text'})

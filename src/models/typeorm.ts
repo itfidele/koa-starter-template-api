@@ -11,7 +11,7 @@ export async function closeDbConnection (): Promise<void> {
     }
   }
   
-export async function createPostgresConnection (): Promise<Connection> {
+export async function createMysqlConnection (): Promise<Connection> {
     await closeDbConnection()
     connection = await createConnection(config)
     return connection
@@ -21,5 +21,5 @@ export async function getConnection (): Promise<Connection> {
     if (connection && connection.isConnected) {
       return connection
     }
-    return createPostgresConnection()
+    return createMysqlConnection()
 }
